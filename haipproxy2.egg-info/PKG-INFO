@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: haipproxy2
+Version: 0.1.0
+Summary: High aviariable proxy pool client for crawlers.
+Home-page: https://github.com/SpiderClub/haipproxy
+Author: hzy
+Author-email: resolvewang@foxmail.com
+License: MIT
+Description: #### 在原先haipproxy的基础上，稍微修改了下
+        
+        * 可以通过scrapy中的settings配置来覆盖默认配置，
+        * 编写了scrapy download middleware
+        
+        ###  todo
+        
+        * delete proxy 逻辑
+Keywords: proxy,client,haipproxy2
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.4.0
+Description-Content-Type: text/markdown
