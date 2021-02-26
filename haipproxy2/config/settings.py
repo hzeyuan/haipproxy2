@@ -10,9 +10,9 @@ Settings for global.
 # Scrapy settings of this project
 #####################################################################
 # scrapy basic info
-BOT_NAME = 'haiproxy'
-SPIDER_MODULES = ['haipproxy2.crawler.spiders', 'haipproxy2.crawler.validators']
-NEWSPIDER_MODULE = 'haipproxy2.crawler'
+BOT_NAME = 'haiproxy2'
+SPIDER_MODULES = ['haipproxy.crawler.spiders', 'haipproxy.crawler.validators']
+NEWSPIDER_MODULE = 'haipproxy.crawler'
 
 # downloader settings
 ROBOTSTXT_OBEY = False
@@ -36,8 +36,8 @@ RETRY_ENABLED = False
 TELNETCONSOLE_ENABLED = False
 
 
-UserAgentMiddleware = 'haipproxy2.crawler.middlewares.UserAgentMiddleware'
-ProxyMiddleware = 'haipproxy2.crawler.middlewares.ProxyMiddleware'
+UserAgentMiddleware = 'haipproxy.crawler.middlewares.UserAgentMiddleware'
+ProxyMiddleware = 'haipproxy.crawler.middlewares.ProxyMiddleware'
 DOWNLOADER_MIDDLEWARES = {
     UserAgentMiddleware: 543,
     ProxyMiddleware: 543,
@@ -53,7 +53,7 @@ SPIDER_MIDDLEWARES = {
 
 # scrapy log settings
 LOG_LEVEL = 'DEBUG'
-# LOG_FILE = 'logs/haipproxy2.log'
+# LOG_FILE = 'logs/haipproxy.log'
 
 
 #####################################################################
@@ -68,55 +68,55 @@ REDIS_PASSWORD = '123456'
 REDIS_DB = 3
 
 # scheduler settings
-TIMER_RECORDER = 'haipproxy2:scheduler:task'
-LOCKER_PREFIX = 'haipproxy2:lock:'
+TIMER_RECORDER = 'haipproxy:scheduler:task'
+LOCKER_PREFIX = 'haipproxy:lock:'
 
 # proxies crawler's settings
 SPIDER_FEED_SIZE = 10
-SPIDER_COMMON_TASK = 'haipproxy2:spider:common'
-SPIDER_AJAX_TASK = 'haipproxy2:spider:ajax'
-SPIDER_GFW_TASK = 'haipproxy2:spider:gfw'
-SPIDER_AJAX_GFW_TASK = 'haipproxy2:spider:ajax_gfw'
+SPIDER_COMMON_TASK = 'haipproxy:spider:common'
+SPIDER_AJAX_TASK = 'haipproxy:spider:ajax'
+SPIDER_GFW_TASK = 'haipproxy:spider:gfw'
+SPIDER_AJAX_GFW_TASK = 'haipproxy:spider:ajax_gfw'
 
 # data_all is a set , it's a dupefilter
-DATA_ALL = 'haipproxy2:all'
+DATA_ALL = 'haipproxy:all'
 
 # the data flow is init queue->validated_queue->validator_queue(temp)->validated_queue(score queue)->
 # ttl_queue, speed_qeuue -> clients
 # http_queue is a list, it's used to store initially http/https proxy resourecs
-INIT_HTTP_QUEUE = 'haipproxy2:init:http'
+INIT_HTTP_QUEUE = 'haipproxy:init:http'
 
 # socks proxy resources container
-INIT_SOCKS4_QUEUE = 'haipproxy2:init:socks4'
-INIT_SOCKS5_QUEUE = 'haipproxy2:init:socks5'
+INIT_SOCKS4_QUEUE = 'haipproxy:init:socks4'
+INIT_SOCKS5_QUEUE = 'haipproxy:init:socks5'
 
 # custom validator settings
 VALIDATOR_FEED_SIZE = 50
 
 # they are temp sets, come from init queue, in order to filter transparnt ip
-TEMP_HTTP_QUEUE = 'haipproxy2:http:temp'
-TEMP_HTTPS_QUEUE = 'haipproxy2:https:temp'
-TEMP_WEIBO_QUEUE = 'haipproxy2:weibo:temp'
-TEMP_ZHIHU_QUEUE = 'haipproxy2:zhihu:temp'
+TEMP_HTTP_QUEUE = 'haipproxy:http:temp'
+TEMP_HTTPS_QUEUE = 'haipproxy:https:temp'
+TEMP_WEIBO_QUEUE = 'haipproxy:weibo:temp'
+TEMP_ZHIHU_QUEUE = 'haipproxy:zhihu:temp'
 
 # valited queues are zsets.squid and other clients fetch ip resources from them.
-VALIDATED_HTTP_QUEUE = 'haipproxy2:validated:http'
-VALIDATED_HTTPS_QUEUE = 'haipproxy2:validated:https'
-VALIDATED_WEIBO_QUEUE = 'haipproxy2:validated:weibo'
-VALIDATED_ZHIHU_QUEUE = 'haipproxy2:validated:zhihu'
+VALIDATED_HTTP_QUEUE = 'haipproxy:validated:http'
+VALIDATED_HTTPS_QUEUE = 'haipproxy:validated:https'
+VALIDATED_WEIBO_QUEUE = 'haipproxy:validated:weibo'
+VALIDATED_ZHIHU_QUEUE = 'haipproxy:validated:zhihu'
 
 # time to live of proxy ip resources
 TTL_VALIDATED_RESOURCE = 2  # minutes
-TTL_HTTP_QUEUE = 'haipproxy2:ttl:http'
-TTL_HTTPS_QUEUE = 'haipproxy2:ttl:https'
-TTL_WEIBO_QUEUE = 'haipproxy2:ttl:weibo'
-TTL_ZHIHU_QUEUE = 'haipproxy2:ttl:zhihu'
+TTL_HTTP_QUEUE = 'haipproxy:ttl:http'
+TTL_HTTPS_QUEUE = 'haipproxy:ttl:https'
+TTL_WEIBO_QUEUE = 'haipproxy:ttl:weibo'
+TTL_ZHIHU_QUEUE = 'haipproxy:ttl:zhihu'
 
 # queue for proxy speed
-SPEED_HTTP_QUEUE = 'haipproxy2:speed:http'
-SPEED_HTTPS_QUEUE = 'haipproxy2:speed:https'
-SPEED_WEIBO_QUEUE = 'haipproxy2:speed:weibo'
-SPEED_ZHIHU_QUEUE = 'haipproxy2:speed:zhihu'
+SPEED_HTTP_QUEUE = 'haipproxy:speed:http'
+SPEED_HTTPS_QUEUE = 'haipproxy:speed:https'
+SPEED_WEIBO_QUEUE = 'haipproxy:speed:weibo'
+SPEED_ZHIHU_QUEUE = 'haipproxy:speed:zhihu'
 
 # squid settings on linux os
 # execute sudo chown -R $USER /etc/squid/ and
@@ -133,7 +133,7 @@ LONGEST_RESPONSE_TIME = 10
 # client picks proxies which's score is not less than LOWEST_SCORE
 LOWEST_SCORE = settings.get('LOWEST_SCORE',6)
 
-# if the total num of proxies fetched is less than LOWES_TOTAL_PROXIES, haipproxy2 will fetch more
+# if the total num of proxies fetched is less than LOWES_TOTAL_PROXIES, haipproxy will fetch more
 # more proxies with lower quality
 LOWEST_TOTAL_PROXIES = 5
 # if config

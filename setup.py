@@ -30,7 +30,8 @@ setup(
     packages=[
         'haipproxy2',
         'haipproxy2.client',
-        'haipproxy2.utils'
+        'haipproxy2.utils',
+        'haipproxy2.config',
     ],
     install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
     include_package_data=True,
