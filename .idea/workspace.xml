@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3587ae4d-ecfd-4711-a84b-eb539ebb2bc5" name="Default Changelist" comment="" />
+    <list default="true" id="3587ae4d-ecfd-4711-a84b-eb539ebb2bc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +17,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1oz6jgUW35LLkhCZN9dUf4AHiFY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,11 +54,17 @@
       <option name="presentableId" value="Default" />
       <updated>1614277208566</updated>
       <workItem from="1614277210094" duration="1873000" />
-      <workItem from="1614312829097" duration="2459000" />
+      <workItem from="1614312829097" duration="2905000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="283" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614317587065">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="462" y="283" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1003@0.23.1920.1003" timestamp="1614317587065" />
   </component>
 </project>
